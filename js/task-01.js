@@ -1,21 +1,17 @@
 const categories = document.querySelectorAll('.item');
-// console.log(categories);
 console.log("Number of categories:", categories.length);
 
-const tites = document.querySelectorAll('#categories h2');
-// console.log(tites);
-const firstElement = tites[0].nextElementSibling.children.length;
-// console.log(firstElement);
-const secondtElement = tites[1].nextElementSibling.children.length;
-// console.log(secondtElement);
-const thirdElement = tites[2].nextElementSibling.children.length;
-// console.log(thirdElement);
+function massageCreator(arr) {
+  arr.forEach(elm => { 
+    const categoriTitle = elm.querySelector('h2');
+    const category = categoriTitle.textContent;
 
-console.log('Category:', tites[0].textContent);
-console.log('Elements:', firstElement);
+    const items = elm.querySelectorAll('li');
+    const elements = items.length;
 
-console.log('Category:', tites[1].textContent);
-console.log('Elements:', secondtElement);
+    console.log(`Category: ${category}`);
+    console.log(`Elements: ${elements}`);    
+  });
+}
 
-console.log('Category:', tites[2].textContent);
-console.log('Elements:', thirdElement);
+massageCreator(categories);

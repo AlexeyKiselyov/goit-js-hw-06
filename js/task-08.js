@@ -1,16 +1,14 @@
 const form = document.querySelector('.login-form');
-// console.log(form);
 
 form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
-  e.preventDefault();
+  e.preventDefault();  
   
-  const formElement = e.currentTarget.elements;    
-  const mail = formElement.email.value;
-  const password = formElement.password.value;
+  const mail = e.currentTarget.elements.email.value;
+  const password = e.currentTarget.elements.password.value;
   
-  if (!formElement.email.value || !formElement.password.value) {
+  if (!mail || !password) {
     alert("All inputs must be completed")
     return
     }

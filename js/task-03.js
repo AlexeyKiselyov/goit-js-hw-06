@@ -14,7 +14,6 @@ const images = [
 ];
 
 const galleryEl = document.querySelector('.gallery');
-console.log(galleryEl);
 
 const makeGalleryMarkup = galleryObj => {
   const { url, alt } = galleryObj;
@@ -23,7 +22,6 @@ const makeGalleryMarkup = galleryObj => {
 };
 
 const makeGalleryObj = images.map(makeGalleryMarkup).join('');
-console.log(makeGalleryObj);
 
 galleryEl.insertAdjacentHTML('beforeend', makeGalleryObj);
 
